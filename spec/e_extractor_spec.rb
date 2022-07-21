@@ -20,5 +20,10 @@ RSpec.describe "e_extractor method" do
         result = e_extractor("heeello")
         expect(result).to eq "eeehllo"
     end
+
+    it "if e at start, still moves them earlier" do
+        result = e_extractor("eeelloe")
+        expect(result).to eq "eeeello"
+    end
 end
       

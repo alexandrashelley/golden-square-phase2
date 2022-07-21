@@ -1,7 +1,7 @@
 require 'checking_grammar'
 
 RSpec.describe "checking_grammar method" do
-  it "returns error if nothing is inputted" do
+  it "fails" do
     expect { (checking_grammar("")) }.to raise_error "Please input a string to check."
   end
 
@@ -9,7 +9,19 @@ RSpec.describe "checking_grammar method" do
     expect(checking_grammar("Please check my grammar.")).to eq "Nothing to correct! Nice job!"
   end
 
-  it "returns negative feedback" do
+  context "returns negative feedback" do
+    it "returns 'I noticed some errors...'" do
     expect(checking_grammar("please check my grammar")).to eq "I noticed some errors..."
+    end
+  end
+
+  context "returns negative feedback" do
+    it "returns 'I noticed some errors...'" do
+      expect(checking_grammar("please check my grammar.")).to eq "I noticed some errors..."
+  end
+end
+
+  it "returns 'I noticed some errors...'" do
+    expect(checking_grammar("Please check my grammar")).to eq "I noticed some errors..."
   end
 end

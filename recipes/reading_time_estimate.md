@@ -28,11 +28,17 @@ _Make a list of examples of what the method will take and return._
 # checking_grammar("")
 # => "Nothing to check. Please enter a string."
 
-checking_grammar("Please check my grammar.")
+# checking_grammar("Please check my grammar.")
 # => "Nothing to correct! Nice job!"
 
-checking_grammar("please check my grammar")
-# => I noticed some errors...
+# checking_grammar("please check my grammar")
+# => "I noticed some errors..."
+
+checking_grammar("Please check my grammar")
+# => "I noticed some errors..."
+
+checking_grammar("please check my grammar.")
+# => "I noticed some errors."
 ```
 _Encode each example as a test. You can add to the above list as you go._
 

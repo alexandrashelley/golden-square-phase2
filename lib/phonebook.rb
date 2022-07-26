@@ -1,5 +1,4 @@
 class Phonebook 
-
   def initialize
     @numbers = [] 
   end
@@ -16,6 +15,3 @@ class Phonebook
     return @numbers
   end
 end
-
-# p phonebook = Phonebook.new 
-# p phonebook.extract("07123456789, 07123456788, 071234567890")

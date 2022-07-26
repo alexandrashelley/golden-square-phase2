@@ -5,14 +5,13 @@ class Phonebook
   end
 
   def extract(entry)
+    fail "Message doesn't contain a number!" if !entry.match?(/[0-9]/)
+    fail "Number is the wrong length!" if !entry.match?(/[0-9]{11}/)
     entry.scan(/[0-9]{11}/).each do |word| 
-      @numbers << word
-    end
+      @numbers << (word) unless @numbers.include? (word)
+      end
   end
   
-  # fail "number is the wrong length!" if !entry.include? 
-  # (/[0-9]{9}/)
-
   def list
     return @numbers
   end

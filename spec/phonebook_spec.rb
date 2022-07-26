@@ -54,7 +54,7 @@ RSpec.describe Phonebook do
   end
 
   # 7. extract ignores duplicates from a single diary entry
-  xit "extract method ignores duplicates from a single diary
+  it "extract method ignores duplicates from a single diary
        entry" do
     phonebook = Phonebook.new
     phonebook.extract("07123456789, 07123456789")
@@ -63,14 +63,14 @@ RSpec.describe Phonebook do
 
   #8. extract throws error from messages that don't
   # contain a phone number 
-  xit "string doesn't contain a number" do
+  it "string doesn't contain a number" do
     phonebook = Phonebook.new
     expect{ phonebook.extract("my friends are sooo cool")}.to raise_error "Message doesn't contain a number!" 
   end
   # don't forget empty string etc.
 
   # 9. throws error if the number is the wrong length
-  xit "number is the wrong length" do
+  it "number is the wrong length!" do
     phonebook = Phonebook.new
     expect{ phonebook.extract("0712345678")}.to raise_error "Number is the wrong length!" 
   end

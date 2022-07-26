@@ -36,9 +36,3 @@ class DiaryEntry
     return list_of_words.join(" ")
   end
 end
-
-p diary_entry = DiaryEntry.new("title", "this is some content")
-p diary_entry.reading_chunk(2, 1)
-p diary_entry.reading_chunk(2, 1)
-p diary_entry.reading_chunk(2, 1)
-

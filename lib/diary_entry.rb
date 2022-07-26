@@ -28,7 +28,7 @@ class DiaryEntry
     start_from = @start # our starting position (starting at 0), that we can index from
     end_at = @start + chunk_to_read # based on our wpm and time to read, end_at = starting point + number of words (in this case, 2)
     list_of_words = @contents.split(" ")[start_from, end_at] # start from index 0, end at index 2 (2 words)
-      if end_at >= list_of_words.length # 
+      if end_at >= count_words 
         @start = 0
       else 
         @start = end_at

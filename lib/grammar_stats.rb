@@ -31,12 +31,11 @@ class GrammarStats
   def total
     @total
   end
-  
 end
 
-p check_grammar = GrammarStats.new
-p check_grammar.check("Hello")
-p check_grammar.check("Hello.")
-p check_grammar.check("Hello.")
-p check_grammar.passed
-p check_grammar.total
+  # p check_grammar = GrammarStats.new
+  # p check_grammar.check("Hello")
+  # p check_grammar.check("Hello.")
+  # p check_grammar.check("Hello.")
+  # p check_grammar.passed
+  # p check_grammar.total

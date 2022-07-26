@@ -45,7 +45,4 @@ RSpec.describe GrammarStats do
       check_grammar = GrammarStats.new
       expect { (check_grammar.check(123)) }.to raise_error "Please input some words"
     end
-
-        
-
 end

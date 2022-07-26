@@ -17,5 +17,5 @@ class Phonebook
   end
 end
 
-p phonebook = Phonebook.new 
-p phonebook.extract("07123456789, 07123456788, 071234567890")
+# p phonebook = Phonebook.new 
+# p phonebook.extract("07123456789, 07123456788, 071234567890")

@@ -37,37 +37,6 @@ class DiaryEntry
   end
 end
 
-
-
-    # Returns a string with a chunk of the contents that the user could read
-    # in the given number of minutes.
-    # If called again, `reading_chunk` should return the next chunk, skipping
-    # what has already been read, until the contents is fully read.
-    # The next call after that it should restart from the beginning.
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    ## 2, 1
-    #end_at = wpm * minutes # e.g. 2wpm, 1min to read => last_words_read = 2
-    #list_of_words = @contents.split(" ") # created an array of our list of words ["this", "is", "some", "content"]
-    #chunk_to_read = list_of_words[@start, end_at] # takes our list_of_words array, and finds the start(0), and last_word_of_current_chunk(2). chunk = 0, 2
-    #@start = end_at # updating start as it is begins with (0), and saying our start equals 2
-    #  if @start > list_of_words.length
-    #    @start = 0
-    # else
-    #    @start
-    #  end
-    #return chunk_to_read.join(" ")
-  #end
-#end
-
 p diary_entry = DiaryEntry.new("title", "this is some content")
 p diary_entry.reading_chunk(2, 1)
 p diary_entry.reading_chunk(2, 1)

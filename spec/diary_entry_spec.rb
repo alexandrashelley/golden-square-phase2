@@ -33,7 +33,6 @@ RSpec.describe do DiaryEntry
         diary_entry = DiaryEntry.new("a title", "this is some content")
         diary_entry.reading_chunk(2, 1)
         diary_entry.reading_chunk(2, 1)
-        diary_entry.reading_chunk(2, 1)
         reset = diary_entry.reading_chunk(2, 1)
         expect(reset).to eq "this is"
       end

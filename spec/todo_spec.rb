@@ -36,12 +36,17 @@ RSpec.describe Todo do
     todo.complete_todos("Talk to the plants")
     expect(todo.list).to eq ["Water the plants"]
   end 
-
+  
   it "error message if complete_todos is called with
   a task that does not exist in our list" do
     todo = Todo.new
     todo.add_todo("Talk to the plants")
     expect { todo.complete_todos("Prune the plants") }.to raise_error "That task doesn't exist!"
+  end
+
+  it "error message if no task is entered" do
+    todo = Todo.new
+    expect { todo.add_todo("") }.to raise_error "You did not enter a task"
   end
 
   it "add_todos ignores duplicate tasks" do

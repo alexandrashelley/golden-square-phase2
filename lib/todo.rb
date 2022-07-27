@@ -4,6 +4,7 @@ class Todo
   end
 
   def add_todo(task)
+    fail "You did not enter a task" if task == ""
     @list << task unless @list.include? task
   end
   

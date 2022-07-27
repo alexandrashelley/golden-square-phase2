@@ -2,53 +2,52 @@ require 'todo'
 
 RSpec.describe Todo do
 
-  xit "calling list method outputs list of tasks" do 
+  it "calling list method outputs list of tasks" do 
     todo = Todo.new
     expect(todo.list).to eq []
   end
 
-  xit "calling add_todo with one task adds it to our
+  it "calling add_todo with one task adds it to our
   list" do
     todo = Todo.new
-    todo.add("Water the plants") 
-    expect(phonebook.list).to eq ["Water the plants"]
+    todo.add_todo("Water the plants") 
+    expect(todo.list).to eq ["Water the plants"]
   end
 
-  xit "calling add_todo with more than one task adds 
+  it "calling add_todo with more than one task adds 
   them all to the list" do
     todo = Todo.new
-    todo.add("Water the plants, Talk to the plants")
-    expect(todo.list).to eq ["Water the plants, Talk to
-    the plants"]
+    todo.add_todo("Water the plants, Talk to the plants")
+    expect(todo.list).to eq ["Water the plants, Talk to the plants"]
   end
 
-  xit "calling add_todo again, adds task to existing 
+  it "calling add_todo again, adds task to existing 
   list" do
     todo = Todo.new
-    todo.add("Water the plants")
-    todo.add("Talk to the plants")
-    expect(todo.list).to eq ["Water the plants, Talk to
-    the plants"]
+    todo.add_todo("Water the plants")
+    todo.add_todo("Talk to the plants")
+    expect(todo.list).to eq ["Water the plants", "Talk to the plants"]
   end
 
-  xit "calling complete_todos, takes task off list" do 
+  it "calling complete_todos, takes task off list" do 
     todo = Todo.new
-    todo.complete("Water the plants")
-    expect(todo.list).to eq ["Talk to the plants"]
+    todo.add_todo("Water the plants")
+    todo.add_todo("Talk to the plants")
+    todo.complete_todos("Talk to the plants")
+    expect(todo.list).to eq ["Water the plants"]
   end 
 
-  xit "error message if complete_todos is called with
+  it "error message if complete_todos is called with
   a task that does not exist in our list" do
-  todo = Todo.new
-  todo.complete("Prune the plants")
-  expect { todo.list }.to raise_error "That task doesnt 
-  exist!"
+    todo = Todo.new
+    todo.add_todo("Talk to the plants")
+    expect { todo.complete_todos("Prune the plants") }.to raise_error "That task doesn't exist!"
   end
 
-  xit "add_todos ignores duplicate tasks" do
+  it "add_todos ignores duplicate tasks" do
     todo = Todo.new
-    todo.add("Water the plants")
-    todo.add("Water the plants")
+    todo.add_todo("Water the plants")
+    todo.add_todo("Water the plants")
     expect(todo.list).to eq ["Water the plants"]
   end
 end

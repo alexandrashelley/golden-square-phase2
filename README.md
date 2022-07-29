@@ -1,1 +1,0 @@
-# golden_square_class_systems

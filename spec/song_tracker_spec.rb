@@ -1,7 +1,7 @@
 require 'song_tracker'
 
 RSpec.describe SongTracker do
-  xit "calling list method returns an array" do
+  it "calling list method returns an array" do
     songs = SongTracker.new
     expect(songs.list).to eq []
   end
@@ -41,3 +41,53 @@ RSpec.describe SongTracker do
     end
   end
 end
+
+
+
+
+
+require "track"
+
+RSpec.describe Track do
+  it "The playlist is empty" do
+    track = Track.new
+    expect(track.playlist).to eq []
+  end
+
+  it "adding a track into the playlist" do
+    track = Track.new
+    track.add("Love")
+    expect(track.list).to eq ["Love"]
+  end
+
+  context "show the list method of playlist" do
+    it "fails" do
+    track = Track.new
+    expect { track.list }.to raise_error "empty playlist"
+    end
+  end
+end
+
+
+# RSpec.describe Track do
+
+#   it "The playlist is empty" do
+#     track = Track.new
+#     expect(track.playlist).to eq []
+#   end
+
+
+#   it "adding a track into the playlist" do
+#     track = Track.new
+#     track.add("Love")
+#     expect(track.list).to eq ["Love"]
+#   end
+
+#   context "show the list method of playlist" do
+#     it "fails" do
+#       playlist = Track.new
+#       expect { track.list }.to raise_error "empty playlist"
+
+#     end
+#   end
+# end

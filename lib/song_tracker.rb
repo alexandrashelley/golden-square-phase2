@@ -13,3 +13,12 @@ class SongTracker
     @list
   end
 end
+
+
+
+# songs = SongTracker.new
+# songs.add_song("Raspberry Beret")
+# songs.add_song("Purple Rain")
+# p songs.list
+
+
